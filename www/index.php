@@ -1,9 +1,10 @@
 <?php
-$filename = "data.json";
-function readJSONFile($filename)
+global $path;
+require_once "config.php";
+function readJSONFile($path)
 {
     try {
-        $jsonContents = file_get_contents($filename);
+        $jsonContents = file_get_contents($path);
         if ($jsonContents === false) {
             throw new Exception("Ошибка чтения файла JSON");
         }
@@ -18,7 +19,7 @@ function readJSONFile($filename)
     return $e;
 }
 
-$data = readJSONFile($filename);
+$data = readJSONFile($path);
 
 ?>
 
@@ -36,10 +37,8 @@ $data = readJSONFile($filename);
         <form action="add.php" method="GET">
             <label for="name">Имя:</label><br>
             <input type="text" id="name" name="name"><br><br>
-
             <label for="phone">Телефон:</label><br>
             <input type="tel" id="phone" name="phone" pattern="\+?[0-9\s\-\(\)]+"><br><br>
-
             <input class="button" type="submit" value="Добавить">
         </form>
         <br>
