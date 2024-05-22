@@ -1,2 +1,0 @@
-<?php
-$path = 'data.json';

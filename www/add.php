@@ -1,7 +1,7 @@
 <?php
 global $path;
-require_once "config.php";
 header("Content-Type: application/json");
+$data = Cfg::readJSONFile('data.json');
 
 if (file_exists($path)) {
     $file = file_get_contents($path);

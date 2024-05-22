@@ -1,26 +1,7 @@
 <?php
-global $path;
-require_once "config.php";
-function readJSONFile($path)
-{
-    try {
-        $jsonContents = file_get_contents($path);
-        if ($jsonContents === false) {
-            throw new Exception("Ошибка чтения файла JSON");
-        }
-        $decodedData = json_decode($jsonContents, true);
-        if ($decodedData === null) {
-            throw new Exception("Ошибка декодирования данных JSON");
-        }
-        return $decodedData;
-    } catch (Exception $e) {
-        echo "Произошла ошибка: " . $e->getMessage();
-    }
-    return $e;
-}
-
-$data = readJSONFile($path);
-
+//echo date_default_timezone_get(), "\n<br />", date('d.m.Y H:i');
+include '../lib/initialize.php';
+$data = Cfg::readJSONFile('data.json')
 ?>
 
 <!DOCTYPE html>
@@ -45,7 +26,17 @@ $data = readJSONFile($path);
     </div>
 
     <div class="done">
-        <h2>Список контактов</h2>
+        <h2>Список контактов </h2>
+        <div>
+            Фильтр имени:
+            <form action="" method="GET">
+                <label for="filter">
+                    <input type="text" id="filter" name="filter">
+                    <input class="button" type="submit" value="OK">
+                </label>
+            </form>
+        </div>
+        <br>
         <table>
             <thead>
             <tr>
@@ -57,7 +48,12 @@ $data = readJSONFile($path);
             </thead>
             <tbody>
             <?php
+            $filter = $_GET['filter'] ?? '';
             foreach ($data as $key => $person) {
+                if (isset($filter)) {
+                    preg_match_all("/($filter)/", $person["name"], $personFilter);
+                    echo $personFilter[0][0] . "\n";
+                }
                 ?>
                 <tr>
                     <td><?php echo $key; ?></td>
