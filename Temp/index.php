@@ -1,6 +1,6 @@
 <?php
 
-use Library\ReadCheck;
+use Temp\Library\ReadCheck;
 
 include '../Temp/initialize.php';
 define('APPLICATION_PATH', ROOT_PATH . DIRECTORY_SEPARATOR . 'application/');
@@ -11,7 +11,7 @@ $data = ReadCheck::readJSONFile('data.json')
 <!DOCTYPE html>
 <html lang="ru">
 <meta charset="utf-8">
-<link rel="stylesheet" href="main.css">
+<link rel="stylesheet" href="../public/main.css">
 <head>
     <title>Test</title>
 </head>

@@ -1,10 +1,10 @@
 <?php
 
-namespace Library;
-class ReadCheck
+class JsonModel
 {
-    public static function readJSONFile($path)
+    public static function readJSONFile()
     {
+        $path = 'data.json';
 
         try {
             $jsonContents = file_get_contents($path);
@@ -21,5 +21,6 @@ class ReadCheck
         }
         return $e;
     }
+
 
 }
