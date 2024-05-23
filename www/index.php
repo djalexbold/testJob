@@ -1,7 +1,11 @@
 <?php
-//echo date_default_timezone_get(), "\n<br />", date('d.m.Y H:i');
-include '../lib/initialize.php';
-$data = Cfg::readJSONFile('data.json')
+
+use Library\ReadCheck;
+
+include '../Temp/initialize.php';
+define('APPLICATION_PATH', ROOT_PATH . DIRECTORY_SEPARATOR . 'application/');
+
+$data = ReadCheck::readJSONFile('data.json')
 ?>
 
 <!DOCTYPE html>
@@ -64,7 +68,9 @@ $data = Cfg::readJSONFile('data.json')
             <?php } ?>
             </tbody>
         </table>
-
 </main>
+<footer style="margin: 20px">
+   <?php echo "Test Job \t", date('Y'); ?>
+</footer>
 </body>
 </html>

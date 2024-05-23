@@ -17,7 +17,7 @@ spl_autoload_register(function ($class) {
         }
     } else {
         $filename = LIB_PATH . '/Library/' . str_replace('\\', '/', $class). '.php';
-        //echo $filename, '<br />';
+        echo $filename, '<br />';
     }
     if (file_exists($filename)) {
         require $filename;

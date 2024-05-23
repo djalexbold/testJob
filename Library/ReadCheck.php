@@ -1,13 +1,8 @@
 <?php
 
-define('ROOT_PATH', realpath(dirname(__FILE__) . '/../'));
-define('LIB_PATH', ROOT_PATH . '/lib');
-
-class Cfg
+namespace Library;
+class ReadCheck
 {
-    const ROOT_DIR = LIB_PATH;
-
-
     public static function readJSONFile($path)
     {
 
@@ -26,4 +21,5 @@ class Cfg
         }
         return $e;
     }
+
 }
