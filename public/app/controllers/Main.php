@@ -10,10 +10,11 @@ class Main extends controller
         //$simple_imported_class = $this->importClass('basic_class/test','test'); // u can import a third party or your own class with file path and class name not: your class should be in classes folder
         //$simple_imported_class->testMethod(); // run an example method from the called class after calling a third party class
         //$simpledata = $this->model('MainModel')->getSimpleData(); // get simple data
-        $simpledata = $this->model('JsonModel')->readJSONFile();
+        $dataRead = $this->model('JsonModel')->readJSONFile();
+
         $this->render("partition/header"); // render header html
         $this->render("partition/sidebar"); // render sidebar html
-        $this->render("/home",['data'=>$simpledata]); // render home page with parameters. U can use  $params['data'] on views/home.php
+        $this->render("/home",['data'=>$dataRead]); // render home page with parameters. U can use  $params['data'] on views/home.php
         $this->render("partition/footer"); // render footer html
     }
 

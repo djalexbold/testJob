@@ -7,14 +7,9 @@
     <link rel="stylesheet" href="main.css">
     <title>Test</title>
 </head>
+<div class="top-menu">
+    <button class="button">Телефоны</button>
+    <button class="button">Задачи</button>
+    <button class="button">Архив </button>
+</div>
 
-<table>
-    <thead>
-    <tr>
-        <td><button class="button">Home</button></td>
-        <td><button class="button">News</button></td>
-        <td><button class="button">Contact</button></td>
-        <td><button class="button">About</button></td>
-    </tr>
-    </thead>
-</table>
