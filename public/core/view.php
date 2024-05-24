@@ -10,7 +10,7 @@ class view
         }
         else
         {
-            exit($file." Görüntü Dosyası bulunamadı");
+            exit($file." Файл изображения не найден");
         }
     }
 }

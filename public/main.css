@@ -9,6 +9,24 @@ body {
     grid-gap: 20px;
 }
 
+.nav {
+    border-radius: 15px;
+    box-shadow: 0px 0px 1px #000000;
+    position: fixed;
+    margin: 0 15%;
+    text-align: right;
+    top: 50%;
+    transform: translateY(-50%);
+    font-weight: bold;
+}
+
+.nav li {
+    list-style-type: none;
+    font-size: x-large;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
 input {
     font: inherit;
     padding: 0.2em 0.5em;

@@ -8,4 +8,13 @@
     <title>Test</title>
 </head>
 
-header
+<table>
+    <thead>
+    <tr>
+        <td><button class="button">Home</button></td>
+        <td><button class="button">News</button></td>
+        <td><button class="button">Contact</button></td>
+        <td><button class="button">About</button></td>
+    </tr>
+    </thead>
+</table>

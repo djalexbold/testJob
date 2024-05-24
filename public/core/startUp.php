@@ -51,7 +51,7 @@ class startUp
             }
             else
             {
-                exit($url[0]." method connot find");
+                exit($url[0]." method cannot find");
             }
         }
         call_user_func_array([$this->class,$this->method],$url);
